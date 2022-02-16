@@ -1,25 +1,29 @@
-import React from 'react';
-import logo from './logo.svg';
+import React, { useEffect, useState } from 'react';
+
 import './App.css';
+import convertCategoryItemToFacetItem from './components/Facet/convertCategoryItemToFacetItem';
+import Facet from './components/Facet/Facet';
+import { FacetDictionary } from './interfaces/facet';
+import elements from './response';
 
 function App() {
+  const [items, setItems] = useState<FacetDictionary>(new Map());
+
+  useEffect(() => {
+    // Get all categories on app start
+    Promise.resolve(elements).then((r) => {
+      // Convert initial items to facet options
+      const convertedItems = convertCategoryItemToFacetItem(r.data.categories);
+      setItems(convertedItems);
+    });
+  }, []);
+
+  const handleFacetItemsChange = (updateItems: FacetDictionary): void => {
+    setItems(updateItems);
+  };
+
   return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.tsx</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
-    </div>
+    <Facet items={items} onItemsChange={handleFacetItemsChange} />
   );
 }
 
