@@ -46,11 +46,10 @@ function Facet(props: FacetParams) {
     onItemsChange(clonedOptions);
   };
 
-  const handleClick = (itemId: string, expanded: boolean, checked: boolean): void => {
+  const handleClick = (itemId: string, expanded: boolean): void => {
     // Get an item by id and change its expanded value with the received expanded parameter
     const item = items.get(itemId) as FacetItem;
     item.expanded = expanded;
-    item.checked = checked;
     // Clone options and update state
     const clonedOptions = cloneDeep(items);
     onItemsChange(clonedOptions);

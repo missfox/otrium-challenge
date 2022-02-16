@@ -12,7 +12,7 @@
   background: transparent;
 }
 
-.button_expanded {
+.button_checked {
   font-weight: 700;
 }
 
@@ -26,4 +26,8 @@
 
 .checkbox-inner {
   display: none;
+}
+
+.facet-wrapper {
+  padding: 20px 10px;
 }

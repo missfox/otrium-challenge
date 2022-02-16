@@ -10,7 +10,7 @@ interface FacetItemsParams {
   childItems: string[],
   allItems: Map<string, FacetItem>,
   onCheck: (id: string, checked: boolean) => void,
-  onClick: (id: string, expanded: boolean, checked: boolean) => void,
+  onClick: (id: string, expanded: boolean) => void,
 }
 
 // Recursively render facet items

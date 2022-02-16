@@ -8,7 +8,7 @@ interface FaceButtonParams {
   children: ReactNode,
   checked: boolean,
   expanded: boolean,
-  onClick: (id: string, expanded: boolean, checked: boolean) => void,
+  onClick: (id: string, expanded: boolean) => void,
   onCheck: (id: string, checked: boolean) => void,
 }
 
@@ -26,7 +26,7 @@ function FacetButton(props: FaceButtonParams) {
         showLabel={false}
         checked={checked}
       />
-      <Button onClick={() => onClick(id, !expanded, !checked)} className={`button ${expanded ? 'button_expanded' : ''}`}>{children}</Button>
+      <Button onClick={() => onClick(id, !expanded)} className={`button ${checked ? 'button_checked' : ''}`}>{children}</Button>
     </div>
   );
 }

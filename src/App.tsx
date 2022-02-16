@@ -23,7 +23,9 @@ function App() {
   };
 
   return (
-    <Facet items={items} onItemsChange={handleFacetItemsChange} />
+    <div className="facet-wrapper">
+      <Facet items={items} onItemsChange={handleFacetItemsChange} />
+    </div>
   );
 }
 

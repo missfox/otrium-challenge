@@ -1,12 +1,42 @@
 # Facet component
 
-## Facet component example
+## Screenshots
+
+Initial component state:
+
+![](screenshots/initial.png)
+
+If you click on any label, the tree will be expanded
+
+One level:
+
+![](screenshots/expanded-1.png)
+
+Two levels:
+
+![](screenshots/expanded-2.png)
+
+If you click on any child element checkbox, item will be marked as checked:
+
+![](screenshots/selected-one.png)
+
+If you click on any checkbox, selected item will be marked as checked or unchecked as well as all its children:
+
+All items are selected:
+
+![](screenshots/selected-all.png)
+
+Items are unselected again:
+
+![](screenshots/unselected-all.png)
+
+## Usage
+
+### Example
 
 ```js
 <Facet items={items} onItemsChange={handleFacetItemsChange} />
 ```
-
-## Usage
 
 You should convert items to facet format using function `convertCategoryItemToFacetItem`
 
